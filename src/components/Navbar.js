@@ -19,6 +19,7 @@ const Navbar = ({ getSearch, getParam }) => {
       <div id='toggle'>
         <i className='fa fa-times'></i>
       </div>
+      <h1>Star Wars</h1>
       <div className='input'>
         <form>
           <input

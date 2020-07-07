@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const Planets = ({ data }) => {
-  console.log(data);
-  return <div>Planets</div>;
+  return (
+    <Fragment>
+      <h2>Planets</h2>
+      <div className='content-cards'>
+        {data.map((planet) => {
+          return (
+            <div className='card' key={uuidv4()}>
+              <div className='card-title'>
+                <h3>{planet.name}</h3>
+              </div>
+              <div className='card-body'>
+                <p>Climate {planet.climate}</p>
+                <p>Gravity {planet.gravity}</p>
+                <p>Orbit Period {planet.orbital_period}</p>
+                <p>Population {planet.population}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </Fragment>
+  );
 };
 
 export default Planets;
