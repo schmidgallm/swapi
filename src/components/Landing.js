@@ -28,12 +28,22 @@ const Landing = () => {
       >
         Star Wars
       </motion.h1>
-      <motion.p animate={{ opacity: 1 }}>
-        <span>
-          <i className='fa fa-angle-double-left'></i>
-        </span>
-        {!hint ? null : hint}
-      </motion.p>
+      {!hint ? null : (
+        <div className='hint'>
+          <motion.i
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            className='fa fa-angle-double-left'
+          ></motion.i>
+
+          <motion.p
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            {hint}
+          </motion.p>
+        </div>
+      )}
     </div>
   );
 };

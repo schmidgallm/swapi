@@ -1,6 +1,7 @@
 // Dependencies
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 // CSS
 import './App.css';

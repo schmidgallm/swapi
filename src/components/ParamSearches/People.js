@@ -1,5 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { motion } from 'framer-motion';
+import Spinner from '../Spinner';
 
 const People = (props) => {
   const [isLoading, setLoading] = useState(true);
@@ -17,26 +19,34 @@ const People = (props) => {
 
   return (
     <Fragment>
-      <h2>People</h2>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <Spinner />
       ) : (
-        <div className='content-cards'>
-          {data.map((person) => {
-            return (
-              <div className='card' key={uuidv4()}>
-                <div className='card-title'>
-                  <h3>{person.name}</h3>
-                </div>
-                <div className='card-body'>
-                  <p>Born {person.birth_year}</p>
-                  <p>Eye Color {person.eye_color}</p>
-                  <p>Gender {person.gender}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <Fragment>
+          <motion.h2 initial={{ x: '-100vw' }} animate={{ x: 0 }}>
+            {props.match.path.split('/').pop()}
+          </motion.h2>
+          <div className='content-cards'>
+            {data.map((person) => {
+              return (
+                <motion.div
+                  whileHover={{ scale: 1.3 }}
+                  className='card'
+                  key={uuidv4()}
+                >
+                  <div className='card-title'>
+                    <h3>{person.name}</h3>
+                  </div>
+                  <div className='card-body'>
+                    <p>Born {person.birth_year}</p>
+                    <p>Eye Color {person.eye_color}</p>
+                    <p>Gender {person.gender}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </Fragment>
       )}
     </Fragment>
   );
