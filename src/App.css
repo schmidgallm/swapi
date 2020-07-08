@@ -15,7 +15,6 @@ body {
   min-height: 100vh;
 }
 
-/* Grid Layout */
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -27,43 +26,62 @@ body {
   background-color: #494d55;
 }
 
+.navbar .active {
+  font-size: 30px;
+}
+
 .navbar h1 {
   text-align: center;
   color: yellow;
+  margin-top: 50px;
+}
+
+.navbar ul {
+  margin: 50px 20px;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin: 20px 10px;
+}
+
+.navbar .nav-link {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  border-left: 1px solid yellow;
+  padding: 10px;
+  transition: 0.2s ease-in;
+}
+
+.navbar .nav-link:hover {
+  background-color: yellow;
+  color: #000;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+.landing h1 {
+  margin-right: 100px;
+}
+
+.landing p {
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .content {
   grid-column: 3/13;
   min-height: 100vh;
-}
-
-#toggle {
-  text-align: right;
-  margin-top: 10px;
-  margin-right: 20px;
-}
-
-#toggle i {
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.navbar form {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  text-align: left;
-}
-
-.navbar .input input {
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 5px 2px;
-  margin: 10px 0;
-}
-
-.navbar select {
-  padding: 5px 2px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .content-header {
